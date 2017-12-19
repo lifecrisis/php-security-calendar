@@ -1,7 +1,7 @@
 # Solution
 
-**Note:** I modified this example slightly.  The original would generate
-a fatal error because the XML stub was not well-formed XML.
+**Note:** I modified this example.  The original would not execute because
+the XML in the sample was not well-formed.
 
 Here we have what is known as an XML injection vulnerability.  At first, it
 appears that submitted variables are filtered for XML special characters.
