@@ -46,3 +46,4 @@ if (
 
 * [CWE-91]( https://cwe.mitre.org/data/definitions/91.html)
 * [strpos()](https://secure.php.net/manual/en/function.strpos.php)
+* [SimpleXMLElement](https://secure.php.net/manual/en/class.simplexmlelement.php)
