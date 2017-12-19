@@ -21,3 +21,4 @@ with no problems!
 # References
 
 * [CWE-79](https://cwe.mitre.org/data/definitions/79.html)
+* [filter_var()](https://secure.php.net/manual/en/function.filter-var.php)
