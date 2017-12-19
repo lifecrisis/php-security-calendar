@@ -1,5 +1,6 @@
 <?php
 
+
 class Login {
 
     public function __construct($user, $pass) {
@@ -7,22 +8,36 @@ class Login {
     }
 
     public function loginViaXml($user, $pass) {
+
         if (
             (!strpos($user, '<') || !strpos($user, '>')) &&
             (!strpos($pass, '<') || !strpos($pass, '>'))
         ) {
-            $format = '<?xml version="1.0"?> <user v="%s"/> <pass v="%s"/>';
-            $xml = sprintf($format, $user, $pass);
-            $xmlElement = new SimpleXMLElement($xml);
 
-            // Perform the actual login.
-            $this->login($xmlElement);
+            // stub for a "credentials" XML document
+            $format = '<?xml version="1.0"?>
+                       <credentials><user>%s</user><pass>%s</pass></credentials>';
+
+            $xml = sprintf($format, $user, $pass);
+            $credentials = new SimpleXMLElement($xml);
+
+            // perform the actual login
+            $this->doLogin($credentials);
         }
+    }
+
+    // Note: this is just a stub method... the login process is not relevant
+    // for this example... this just shows you how this page "sees" the input
+    public function doLogin(SimpleXMLElement $credentials) {
+        echo '<pre>';
+        echo htmlspecialchars($credentials->asXML());
+        echo '</pre>';
     }
 }
 
 if (isset($_POST['username'], $_POST['password'])) {
     new Login($_POST['username'], $_POST['password']);
+    exit;
 }
 
 ?>
